@@ -1,0 +1,9 @@
+import pandas as pd
+x = pd.read_csv('cars.csv')
+y = x[x.index%2 != 0]
+z = x.loc[x['Model'] == 'Mazda RX4']
+A = x.loc[x['Model'] == 'Camaro Z28' , ['cyl']]
+B = x.loc[x["Model"]=="Mazda RX4 Wag"].loc[:,["Model","cyl","gear"]]
+C = x.loc[x["Model"]=="Ford Pantera L"].loc[:,["Model","cyl","gear"]]
+D = x.loc[x["Model"]=="Honda Civic"].loc[:,["Model","cyl","gear"]]
+E = pd.concat([B,C,D])
